@@ -1,0 +1,660 @@
+body {
+    background-color: aliceblue;
+    overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.whatsapp-float {
+    padding: 0;
+    line-height: 1;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 72px;
+    height: 72px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.whatsapp-float {
+    transition:
+        transform 0.35s ease-out,
+        box-shadow 0.35s ease-out;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+.whatsapp-float img {
+    width: 85px;   
+    height: auto;
+    display: block;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    background-color: #101010;
+}
+
+.nav-container {
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 16px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    max-height: 130px;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
+    white-space: nowrap;
+}
+
+.menu a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #f9f9f9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3 ease;
+}
+
+.menu a:hover {
+    opacity: 0.7;
+}
+
+.home {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.slider img.active {
+  opacity: 1;
+}
+
+.home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+
+.home-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 600px;
+  margin-left: 80px;
+  text-align: center;
+}
+
+.home-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 56px;
+}
+
+.home-content p {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home-content a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-colecao {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 34px;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.btn-colecao:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+#destaques {
+  padding: 80px 5%;
+  background-color: #f8f8f8;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 50px;
+}
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.produto-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.produto-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.produto-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.produto-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin: 15px 0 5px;
+  font-size: 1.1rem;
+}
+
+.produto-card p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.produto-card a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-produto {
+  display: inline-block;
+  padding: 10px 25px;
+  border: 1px solid #000;
+  text-decoration: none;
+  color: #000;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-produto:hover {
+  background: #000;
+  color: #fff;
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin-top: 15px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.product-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4 ease, transform 0.4s ease;
+}
+
+.product-info {
+  position: relative;
+  margin-top: 15px;
+}
+
+.img-front {
+  opacity: 1;
+  
+}
+
+.img-back {
+  opacity: 0;
+  
+}
+
+.produto-card:hover .img-front {
+  opacity: 0;
+}
+
+.produto-card:hover .img-back {
+  opacity: 1;
+}
+
+#contato {
+  padding: 80px 5%;
+  background-color: #f8f8f8;
+}
+
+.contato-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.contato-info p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.contato-info a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contato-info a:hover {
+  text-decoration: underline;
+}
+
+.contato-mapa iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 8px;
+}
+
+
+/* PRODUTOS */
+
+.produto-detalhe {
+  padding: 80px 5%;
+}
+
+.produto-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.produto-galeria img {
+  border-radius: 20px;
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.produto-info h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+}
+
+.produto-info p {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.produto-info a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.preco {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+.descricao {
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.footer-logo {
+  
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.footer-instagram img:hover {
+  transform: scale(1.15);
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-container h3 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.footer-container a {
+  font-family: 'Montserrat', sans-serif;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.footer-container a:hover {
+  color: #fff;
+}
+
+.footer-container p {
+  margin-top: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+#footer {
+  background-color: #101010;
+  width: 100%;
+
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* espaço entre os logos */
+  margin-bottom: 15px;
+}
+
+.logo-gld {
+  width: 80px;
+  height: auto;
+}
+
+.logo-instagram {
+  width: 32px;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.logo-instagram:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+#footer p {
+  color: #aaa;
+  font-size: 14px;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.product-gallery {
+  position: relative;
+  width: 400px;
+  height: 500px;
+}
+
+.product-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-img.active {
+  opacity: 1;
+}
+
+.product-slider {
+  position: relative;
+  width: 400px;
+}
+
+.produto-img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* BOTÕES */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.slider-btn:hover {
+  background: #000;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev {
+  left: 10px;
+}
+
+.slider-btn.next {
+  right: 10px;
+}
+
+.produto-img {
+  width: 100%;
+  max-width: 420px;
+  transition: opacity 0.35 ease-in-out;
+}
+
+@media (max-width: 1200px) {
+
+  .nav-container {
+    padding: 16px 20px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .home-content h1 {
+    font-size: 48px;
+  }
+
+  .product-gallery {
+    width: 100%;
+    height: 480px;
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .home-content {
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  .home-content h1 {
+    font-size: 42px;
+  }
+
+  .produto-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .product-gallery {
+    margin: 0 auto;
+    height: 450px;
+  }
+
+  .contato-container {
+    grid-template-columns: 1fr;
+  }
+
+}@media (max-width: 768px) {
+
+  .navbar {
+    height: auto;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu {
+    gap: 16px;
+  }
+
+  .home-content h1 {
+    font-size: 36px;
+  }
+
+  .produtos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-card img {
+    height: 240px;
+  }
+
+  .product-gallery {
+    height: 420px;
+  }
+
+  .slider-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .home-content h1 {
+    font-size: 30px;
+  }
+
+  .home-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-colecao {
+    padding: 10px 26px;
+  }
+
+  .titulo-secao {
+    font-size: 1.8rem;
+  }
+
+  .produto-card {
+    padding: 16px;
+  }
+
+  .produto-info h1 {
+    font-size: 1.6rem;
+  }
+
+  .preco {
+    font-size: 1.2rem;
+  }
+
+  .product-gallery {
+    height: 360px;
+  }
+
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-float img {
+    width: 60px;
+  }
+
+}
+
+@media (max-width: 360px) {
+
+  .home-content h1 {
+    font-size: 26px;
+  }
+
+  .menu a {
+    font-size: 14px;
+  }
+
+  .product-gallery {
+    height: 300px;
+  }
+
+  .slider-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+}

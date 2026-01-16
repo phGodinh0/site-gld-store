@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shorts Jeans Hugo Boss - GLD Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/png" href="imgs/logo.png">
+</head>
+<body>
+    <header class="navbar">
+    <div class="nav-container">
+
+        <div class="logo">
+            <img src="../imgs/gld-store.png" alt="Logo">
+        </div>
+
+        <nav class="menu">
+            <a href="../index.html#home">Home</a>
+            <a href="../index.html#destaques">Produtos</a>
+            <a href="../index.html#contato">Contato</a>
+
+        </nav>
+
+    </div>
+</header>
+
+<main class="produto-detalhe">
+<section class="produto-detalhe">
+  <div class="produto-container">
+
+    <div class="product-gallery">
+      <button class="slider-btn prev" onclick="trocarImagem(-1)"><</button>
+
+      <img src="../imgs/shorts-jeans-F.jpg" class="product-img active" id="imgProduto" alt="shorts F">
+      <img src="../imgs/shorts-jeans-B.jpg" class="product-img" id="imgProduto" alt="shorts B">
+
+      <button class="slider-btn next" onclick="trocarImagem(1)">></button>
+    </div>
+
+
+    <div class="produto-info">
+      <h1>Shorts Jeans Hugo Boss</h1>
+      <p class="preco">R$ 100,00</p>
+
+      <p class="descricao">
+        Shorts Jeans Casual.
+      </p>
+
+      <a
+        href="https://wa.me/5519998533931?text=Tenho%20interesse%20n%20Shorts%20Jeans%20Hugo%20Boss."
+        class="btn-produto"
+        target="_blank"
+      >
+        Comprar pelo WhatsApp
+      </a>
+    </div>
+
+  </div>
+</main>
+
+
+<footer id="footer">
+  <div class="footer-container">
+
+    <div class="footer-logos">
+      <img src="../imgs/gld-store.png" alt="GLD Store" class="logo-gld">
+
+      <a href="https://instagram.com/gld.store_" target="_blank">
+        <img src="../imgs/instagram.png" alt="Instagram GLD Store" class="logo-instagram">
+      </a>
+    </div>
+
+    <p>© 2026 GLD Store. Todos os direitos reservados.</p>
+
+  </div>
+</footer>
+
+<script>
+  const imagens = [
+    "../imgs/shorts-jeans-F.jpg",
+    "../imgs/shorts-jeans-B.jpg"
+  ];
+
+  let index = 0;
+  const img = document.getElementById("imgProduto");
+
+  function trocarImagem(direcao) {
+    img.style.opacity = "0";
+
+    setTimeout(() => {
+      index += direcao;
+
+      if (index < 0) index = imagens.length - 1;
+      if (index >= imagens.length) index = 0;
+
+      img.src = imagens[index];
+      img.style.opacity = "1";
+    }, 200);
+  }
+</script>
+
+
+</body>
+</html>
